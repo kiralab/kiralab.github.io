@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/pikachu.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KIM DARA - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-CZlzs3X7.js?v=github-kiralab-20260902"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BCCZyO9m.css">
+  <link rel="stylesheet" href="/htb-badges.css">
+  <script src="/htb-badges.js?v=mi6-award-20260902" defer></script>
+  <style>
+    body {
+      background: #000;
+    }
+
+    #root > div:first-child {
+      background: radial-gradient(125% 125% at 50% 10%, #000 38%, #650000 74%, #d00000 100%) !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #4d0000, #e00000) !important;
+    }
+
+    #home img[src="/me.JPEG"] {
+      display: block;
+      width: min(350px, 78vw);
+      aspect-ratio: 1 / 1;
+      margin-inline: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    #projects,
+    a[href="#projects"],
+    a[href^="mailto:"],
+    a[href^="tel:"] {
+      display: none !important;
+    }
+
+    #about p {
+      white-space: pre-line;
+    }
+
+    #contact .grid {
+      width: min(100%, 780px);
+      margin-inline: auto;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 240px)) !important;
+      justify-content: center;
+    }
+
+    /* Cross-side award layout with alternating media and elevated cards. */
+    #award {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #award::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      top: 18%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.16), transparent 68%);
+      pointer-events: none;
+    }
+
+    #award > div:not(:first-child) {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      max-width: 950px !important;
+      border: 1px solid rgba(99, 102, 241, 0.55) !important;
+      background: linear-gradient(135deg, rgba(24, 24, 32, 0.94), rgba(10, 10, 14, 0.82)) !important;
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.42), 0 0 30px rgba(79, 70, 229, 0.08);
+      backdrop-filter: blur(12px);
+      transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+    }
+
+    #award > div:not(:first-child)::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #6366f1, #3b82f6, transparent);
+      z-index: 2;
+    }
+
+    #award > div:not(:first-child) img {
+      border: 1px solid rgba(129, 140, 248, 0.3);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.38);
+    }
+
+    #award > div:not(:first-child):hover {
+      border-color: rgba(96, 165, 250, 0.9) !important;
+      box-shadow: 0 24px 65px rgba(0, 0, 0, 0.5), 0 0 36px rgba(79, 70, 229, 0.2);
+    }
+
+    @media (min-width: 768px) {
+      #award > div:nth-child(odd):not(:first-child) {
+        flex-direction: row-reverse;
+        transform: translateX(6%);
+      }
+
+      #award > div:nth-child(even):not(:first-child) {
+        transform: translateX(-6%);
+      }
+
+      #award > div:nth-child(odd):not(:first-child):hover {
+        transform: translateX(6%) translateY(-7px);
+      }
+
+      #award > div:nth-child(even):not(:first-child):hover {
+        transform: translateX(-6%) translateY(-7px);
+      }
+
+    }
+
+    @media (max-width: 767px) {
+      #award > div:not(:first-child):hover {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* Move the skill icons in a staggered, snake-like wave. */
+    #skill .grid > div > svg,
+    #skill .grid > div > img {
+      will-change: transform;
+      animation: skill-snake 3.6s ease-in-out infinite;
+      filter: drop-shadow(0 10px 18px rgba(59, 130, 246, 0.25));
+    }
+
+    #skill .grid > div:nth-child(6n + 1) > :is(svg, img) { animation-delay: 0s; }
+    #skill .grid > div:nth-child(6n + 2) > :is(svg, img) { animation-delay: -0.6s; }
+    #skill .grid > div:nth-child(6n + 3) > :is(svg, img) { animation-delay: -1.2s; }
+    #skill .grid > div:nth-child(6n + 4) > :is(svg, img) { animation-delay: -1.8s; }
+    #skill .grid > div:nth-child(6n + 5) > :is(svg, img) { animation-delay: -2.4s; }
+    #skill .grid > div:nth-child(6n + 6) > :is(svg, img) { animation-delay: -3s; }
+
+    #skill .grid > div:hover > svg,
+    #skill .grid > div:hover > img {
+      animation-play-state: paused;
+      transform: translateY(-12px) scale(1.08);
+      filter: drop-shadow(0 14px 22px rgba(99, 102, 241, 0.38));
+    }
+
+    @keyframes skill-snake {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      20% { transform: translate(28px, -22px) rotate(7deg) scale(1.08); }
+      40% { transform: translate(38px, 14px) rotate(3deg); }
+      60% { transform: translate(-16px, 26px) rotate(-7deg) scale(0.94); }
+      80% { transform: translate(-34px, -12px) rotate(-3deg); }
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>
