@@ -44,7 +44,7 @@
     ["Path", "The hunt is on", "Cracking into Hack the Box path completed", "4ba2e0f8015a.png"],
     ["Certification", "HTB Certified Web Exploitation Specialist", "HTB CWES certification obtained", "de0e1e597647.png"],
   ].map(([category, title, description, image]) => ({
-    platform: "Academy", category, title, description, image: `/assets/htb-badges/${image}`,
+    platform: "Academy", category, title, description, image: `./assets/htb-badges/${image}`,
   }));
 
   const badges = [...labBadges, ...academyBadges];
@@ -83,9 +83,9 @@
     if (!heading) return false;
     heading.textContent = "HTB Certified Web Exploitation Specialist certification";
     const awardImage = heading.closest("div[class*='flex']")?.querySelector("img")
-      || [...document.querySelectorAll("img")].find((image) => image.getAttribute("src") === "/capt.jpg");
+      || [...document.querySelectorAll("img")].find((image) => image.getAttribute("src")?.endsWith("/capt.jpg"));
     if (awardImage) {
-      awardImage.src = "/cwes.png";
+      awardImage.src = "./cwes.png";
       awardImage.alt = "HTB CWES certification";
     }
     const description = heading.parentElement?.querySelector("p");
@@ -107,9 +107,9 @@
     if (!heading) return false;
     heading.textContent = "Certified Red Team Operations Management (CRTOM)";
     const awardImage = heading.closest("div[class*='flex']")?.querySelector("img")
-      || [...document.querySelectorAll("img")].find((image) => image.getAttribute("src") === "/pisa-thinkcyber.jpg");
+      || [...document.querySelectorAll("img")].find((image) => image.getAttribute("src")?.endsWith("/pisa-thinkcyber.jpg"));
     if (awardImage) {
-      awardImage.src = "/redteam.png";
+      awardImage.src = "./redteam.png";
       awardImage.alt = "Certified Red Team Operations Management (CRTOM)";
     }
     const description = heading.parentElement?.querySelector("p");
@@ -131,9 +131,9 @@
     if (!heading) return false;
     heading.textContent = "Practical Mobile Pentest Associate (PMPA)";
     const awardImage = heading.closest("div[class*='flex']")?.querySelector("img")
-      || [...document.querySelectorAll("img")].find((image) => image.getAttribute("src") === "/tgi.jpg");
+      || [...document.querySelectorAll("img")].find((image) => image.getAttribute("src")?.endsWith("/tgi.jpg"));
     if (awardImage) {
-      awardImage.src = "/PMPA.png";
+      awardImage.src = "./PMPA.png";
       awardImage.alt = "Practical Mobile Pentest Associate (PMPA)";
     }
     const description = heading.parentElement?.querySelector("p");
@@ -155,9 +155,9 @@
     if (!heading) return false;
     heading.textContent = "Digital Forensic Training With MI6 UK";
     const awardImage = heading.closest("div[class*='flex']")?.querySelector("img")
-      || [...document.querySelectorAll("img")].find((image) => image.getAttribute("src") === "/image.png");
+      || [...document.querySelectorAll("img")].find((image) => image.getAttribute("src")?.endsWith("/image.png"));
     if (awardImage) {
-      awardImage.src = "/MI6.png";
+      awardImage.src = "./MI6.png";
       awardImage.alt = "Digital Forensic Training With MI6 UK";
     }
     const description = heading.parentElement?.querySelector("p");
